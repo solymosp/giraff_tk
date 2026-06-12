@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>naviframe</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language="JavaScript">
+<!--
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.0
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && document.getElementById) x=document.getElementById(n); return x;
+}
+
+function MM_nbGroup(event, grpName) { //v3.0
+  var i,img,nbArr,args=MM_nbGroup.arguments;
+  if (event == "init" && args.length > 2) {
+    if ((img = MM_findObj(args[2])) != null && !img.MM_init) {
+      img.MM_init = true; img.MM_up = args[3]; img.MM_dn = img.src;
+      if ((nbArr = document[grpName]) == null) nbArr = document[grpName] = new Array();
+      nbArr[nbArr.length] = img;
+      for (i=4; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+        if (!img.MM_up) img.MM_up = img.src;
+        img.src = img.MM_dn = args[i+1];
+        nbArr[nbArr.length] = img;
+    } }
+  } else if (event == "over") {
+    document.MM_nbOver = nbArr = new Array();
+    for (i=1; i < args.length-1; i+=3) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = (img.MM_dn && args[i+2]) ? args[i+2] : args[i+1];
+      nbArr[nbArr.length] = img;
+    }
+  } else if (event == "out" ) {
+    for (i=0; i < document.MM_nbOver.length; i++) {
+      img = document.MM_nbOver[i]; img.src = (img.MM_dn) ? img.MM_dn : img.MM_up; }
+  } else if (event == "down") {
+    if ((nbArr = document[grpName]) != null)
+      for (i=0; i < nbArr.length; i++) { img=nbArr[i]; img.src = img.MM_up; img.MM_dn = 0; }
+    document[grpName] = nbArr = new Array();
+    for (i=2; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = img.MM_dn = args[i+1];
+      nbArr[nbArr.length] = img;
+  } }
+}
+//-->
+</script>
+</head>
+
+<body bgcolor="#293d6F" text="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="MM_preloadImages('assets/buttons/bt_welcome_on.jpg','assets/buttons/bt_broki_on.jpg','assets/buttons/bt_harkasz_on.jpg','assets/buttons/bt_somu_on.jpg','assets/buttons/bt_haverok_on.jpg','assets/buttons/bt_buli_on.jpg','assets/buttons/bt_fanta_on.jpg','assets/buttons/bt_welcome.jpg')">
+<table width="140" border="0" cellpadding="0" cellspacing="0">
+  <tr> 
+    <td width="19" height="350"></td>
+    <td width="100" valign="top"> 
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tr> 
+          <td><a href="welcome.htm" onClick="MM_nbGroup('down','group1','welcome_bt','assets/buttons/bt_welcome_on.jpg',1)" onMouseOver="MM_nbGroup('over','welcome_bt','assets/buttons/bt_welcome_on.jpg','',1)" onMouseOut="MM_nbGroup('out')" target="mainFrame"><img name="welcome_bt" src="assets/buttons/bt_welcome_on.jpg" border="0" onLoad="MM_nbGroup('init','group1','welcome_bt','assets/buttons/bt_welcome.jpg',1)" vspace="10"></a></td>
+        </tr>
+        <tr> 
+          <td><a href="broki.htm" onClick="MM_nbGroup('down','group1','broki_bt','assets/buttons/bt_broki_on.jpg',1)" onMouseOver="MM_nbGroup('over','broki_bt','assets/buttons/bt_broki_on.jpg','',1)" onMouseOut="MM_nbGroup('out')" target="mainFrame"><img name="broki_bt" src="assets/buttons/bt_broki.jpg" border="0" onLoad="" width="100" height="30" vspace="10"></a></td>
+        </tr>
+        <tr> 
+          <td><a href="harkasz.htm" onClick="MM_nbGroup('down','group1','harkasz_bt','assets/buttons/bt_harkasz_on.jpg',1)" onMouseOver="MM_nbGroup('over','harkasz_bt','assets/buttons/bt_harkasz_on.jpg','',1)" onMouseOut="MM_nbGroup('out')" target="mainFrame"><img name="harkasz_bt" src="assets/buttons/bt_harkasz.jpg" border="0" onLoad="" width="100" height="30" vspace="10"></a></td>
+        </tr>
+        <tr> 
+          <td><a href="somu.htm" onClick="MM_nbGroup('down','group1','somu_bt','assets/buttons/bt_somu_on.jpg',1)" onMouseOver="MM_nbGroup('over','somu_bt','assets/buttons/bt_somu_on.jpg','',1)" onMouseOut="MM_nbGroup('out')" target="mainFrame"><img name="somu_bt" src="assets/buttons/bt_somu.jpg" border="0" onLoad="" width="100" height="30" vspace="10"></a></td>
+        </tr>
+        <tr> 
+          <td><a href="haverok.htm" onClick="MM_nbGroup('down','group1','haverok_bt','assets/buttons/bt_haverok_on.jpg',1)" onMouseOver="MM_nbGroup('over','haverok_bt','assets/buttons/bt_haverok_on.jpg','',1)" onMouseOut="MM_nbGroup('out')" target="mainFrame"><img name="haverok_bt" src="assets/buttons/bt_haverok.jpg" border="0" onLoad="" width="100" height="30" vspace="10"></a></td>
+        </tr>
+        <tr> 
+          <td><a href="buli.htm" onClick="MM_nbGroup('down','group1','buli_bt','assets/buttons/bt_buli_on.jpg',1)" onMouseOver="MM_nbGroup('over','buli_bt','assets/buttons/bt_buli_on.jpg','',1)" onMouseOut="MM_nbGroup('out')" target="mainFrame"><img name="buli_bt" src="assets/buttons/bt_buli.jpg" border="0" onLoad="" width="100" height="30" vspace="10"></a></td>
+        </tr>
+        <tr> 
+          <td><a href="fanta.htm" onClick="MM_nbGroup('down','group1','fanta_bt','assets/buttons/bt_fanta_on.jpg',1)" onMouseOver="MM_nbGroup('over','fanta_bt','assets/buttons/bt_fanta_on.jpg','',1)" onMouseOut="MM_nbGroup('out')" target="mainFrame"><img name="fanta_bt" src="assets/buttons/bt_fanta.jpg" border="0" onLoad="" width="100" height="30" vspace="10"></a></td>
+        </tr>
+      </table>
+    </td>
+    <td width="21"></td>
+  </tr>
+  <tr>
+    <td height="403"></td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
+</body>
+</html>
